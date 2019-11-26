@@ -1,0 +1,149 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+main {
+    display: grid;
+    gap: 1rem;
+    justify-content: end;
+    padding-right: 1rem;
+    height: 100vh;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
+    align-items: center;
+}
+
+.circle {
+    height: 4vw;
+    width: 4vw;
+    border-radius: 50%;
+    background: black;
+    border: 2px solid white;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: .6rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.sections div h1 {
+    opacity:0;
+}
+
+.circle:hover ~ .sections div h1{
+    animation: fadeIn .4s .5s forwards;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity:0;
+        transform:translateY(-2rem);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.circle:nth-child(1) {
+    background: green;
+}
+
+.circle:nth-child(1):hover~.sections .left {
+    left: 0;
+}
+
+.circle:nth-child(2) {
+    background: #fed766;
+    ;
+}
+
+.circle:nth-child(2):hover ~ .sections .right{
+    right: 0;
+}
+
+.circle:nth-child(3) {
+    background: #4285F4;
+    ;
+}
+
+.circle:nth-child(3):hover~.sections .bottom{
+    bottom: 0;
+}
+.circle:nth-child(4):hover~.sections .top{
+    top: 0;
+}
+
+.circle:nth-child(4) {
+    background: #fe4a49;
+    ;
+}
+
+.circle:nth-child(5) {
+    background: #2ab7ca;
+}
+
+.circle:nth-child(5):hover ~ .sections .left{
+    left:0;
+}
+.circle:nth-child(5):hover ~ .sections .right{
+    right:0;
+}
+.circle:nth-child(5):hover ~ .sections .bottom{
+    bottom:0;
+}
+.circle:nth-child(5):hover ~ .sections .top{
+    top:0;
+}
+
+.sections div {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: .5s ease-in-out;
+    z-index: -1;
+}
+
+.sections div.left {
+    top: 0;
+    left: -50vw;
+    width: 50vw;
+    height: 100vh;
+    background: green;
+    z-index:-2;
+}
+
+.sections div.right {
+    top: 0;
+    right: -50vw;
+    width: 50vw;
+    height: 100vh;
+    background: #fed766;
+    z-index:-2;
+}
+
+.sections div.bottom {
+    bottom: -20vh;
+    left: 0;
+    width: 100vw;
+    height: 20vh;
+    background: #4285F4;;
+}
+.sections div.top {
+    top: -30vh;
+    left: 0;
+    width: 100vw;
+    height: 30vh;
+    background: #fe4a49;
+    z-index:-2;
+}
